@@ -14,40 +14,41 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    <script type="text/javascript"></script>
-        <header id="weatherDashboard" align="center">Weather Dashboard</header>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <header id="weatherDashboard" align="center">Weather Dashboard</header>
+    <link rel="stylesheet" href="assets/stylesheets/style.css">
 
-            <div class="container">
+    <div class="container">
 
-                <div class="row" id="mainRow">
-                    <div class="col-lg-3" id="searchBar">
-                        Search for a city:
-                <br><input type="text" id="cityName"><button text="search"></button><br>
-                            search bar
+        <div class="row" id="mainRow">
+            <div class="col-lg-3" id="searchBar">
+                Search for a city:
+                <br><input type="text" id="cityName"><button id="searchButton" text="search">Search</button><br>
+                search bar
                 <div id="storedCities">stored cities</div>
             </div>
-                            <div class="col-lg-9" id="weatherContent">weather content
+            <div class="col-lg-9" id="weatherContent">weather content
                 <div class="row" id="currentWeather">
-                                    current weather
+                    current weather
                 </div>
-                                <div class="row" id="fiveDay">
-                                    five day
+                <div class="row" id="fiveDay">
+                    five day
                     <br>
-                                        <ul style type="none">
-                                            <li id="dayOne">day one</li>
-                                            <li id="dayTwo">day two</li>
-                                            <li id="dayThree">day three</li>
-                                            <li id="dayFour">day four</li>
-                                            <li id="dayFive">day five</li>
-                                        </ul>
+                    <ul class="dailyWeather" style type="none">
+                        <li id="dayOne"> day one </li>
+                        <li id="dayTwo"> day two </li>
+                        <li id="dayThree"> day three </li>
+                        <li id="dayFour"> day four </li>
+                        <li id="dayFive"> day five </li>
+                    </ul>
                 </div>
-                                </div>
+            </div>
 
-                            </div>
+        </div>
 
     </div>
-
+    <script type="text/javascript" src="assets/scripts/javascript.js"></script>
 </body>
 
 </html>
