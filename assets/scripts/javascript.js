@@ -13,6 +13,7 @@ $("#date").text("");
 
 
 
+
   var city = $("#cityName").val();
   console.log(city)
   var queryURLCurrentWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=3bf7feb8cded7176958e566058a498c2"
@@ -36,7 +37,8 @@ $("#date").text("");
       var cityName = response.name
 
       var cityID = response.id
-      var latLon = response.coord
+      var lon = response.coord.lon
+      var lat = response.coord.lat
       var UTCdate = response.dt
 
       //display variables onto page
@@ -65,7 +67,7 @@ $("#date").text("");
         // Day
         var day = date.getDate();
 
-        var convdataTime = month + day + year;
+        var convdataTime = month+ "" + day + "" + year;
 
         $("#date").append(convdataTime)
       };
@@ -145,31 +147,34 @@ $("#date").text("");
           $("#fdHumidity3").text("Humidity: " + humDay3)
 
           //day four weather data
-          $("#fdDate4").text(dateDay3);
+          $("#fdDate4").text(dateDay4);
           $("#fdIcon4").attr("src", "http://openweathermap.org/img/wn/" + iconDay4 + "@2x.png");
           $("#fdTemp4").text("Temp: " + RoundedFtempDay4);
           $("#fdHumidity4").text("Humidity: " + humDay4)
 
           //day five weather data
-          $("#fdDate5").text(dateDay3);
+          $("#fdDate5").text(dateDay5);
           $("#fdIcon5").attr("src", "http://openweathermap.org/img/wn/" + iconDay5 + "@2x.png");
           $("#fdTemp5").text("Temp: " + RoundedFtempDay5);
           $("#fdHumidity5").text("Humidity: " + humDay5)
-        });
+       
 
-      var queryURLuv = "http://api.openweathermap.org/data/2.5/uvi?appid3bf7feb8cded7176958e566058a498c2=" + "&lat=" + lat + "&lon=" + lon
+      var queryURLuv = "https://api.openweathermap.org/data/2.5/uvi?appid=c52446afb86550ccded80a7b29c8a931" + "&lat=" + lat + "&lon=" + lon
       $.ajax({
-        url: queryURLFiveDay,
+        url: queryURLuv,
         method: "GET"
       })
         .then(function (response) {
           console.log(response)
+          var UV=response.value
+          $("#UV").text("UV index: " + UV)
+          $("#currentDayIcon").attr("src", "http://openweathermap.org/img/wn/" + iconDay1 + "@2x.png")
 
 
 
 
         })
-
+      });
 
     });
 
